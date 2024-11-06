@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "7dbfecd7-2ada-4f19-9b16-ea52fef38e0f",
+		"name": "aeropuertos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29548843"
+	},
+	"item": [
+		{
+			"name": "Crear Empresa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RFC\": \"EMP123456789\",\r\n  \"nombre\": \"Empresa Aérea\",\r\n  \"nacionalidad\": \"Mexicana\",\r\n  \"direccion\": \"Calle 456\",\r\n  \"telefonos\": [\"5551234567\", \"5557654321\"],\r\n  \"cantidadAviones\": 12\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/empresa/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empresa",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear aeropuerto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"AER123\",\r\n  \"nombre\": \"Aeropuerto Internacional\",\r\n  \"ciudad\": \"Ciudad de México\",\r\n  \"direccion\": \"Av. Principal 123\",\r\n  \"numeroPistas\": 5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/aeropuerto/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"aeropuerto",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear personal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"PERS001\",\r\n  \"nacionalidad\": \"Mexicana\",\r\n  \"nombres\": \"Juan Pérez\",\r\n  \"direccion\": \"Calle Principal 789\",\r\n  \"lengua\": \"Español\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/personal/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"personal",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear aviones",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"AV001\",\r\n  \"modelo\": \"Boeing 747\",\r\n  \"autonomia\": 8000,\r\n  \"pasajeros\": 400,\r\n  \"tripulacion\": 15,\r\n  \"ultimaRevision\": \"2024-01-01\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/avion/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"avion",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rutas de vuelo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"codigo\": \"RUTA001\",\r\n  \"origen\": \"Ciudad de México\",\r\n  \"destino\": \"Cancún\",\r\n  \"duracion\": 2,\r\n  \"escalas\": [\"Guadalajara\", \"Monterrey\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/rutaVuelos/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"rutaVuelos",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reasignar ruta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nuevoDestino\": \"Tijuana\",\r\n  \"nuevaDuracion\": 3,\r\n  \"nuevasEscalas\": [\"Monterrey\", \"Guadalajara\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/rutaVuelos/reasignar/RUTA001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"rutaVuelos",
+						"reasignar",
+						"RUTA001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar aeropuerto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/aeropuerto/eliminar/AER123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"aeropuerto",
+						"eliminar",
+						"AER123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar empresa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/empresa/eliminar/EMP123456789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empresa",
+						"eliminar",
+						"EMP123456789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar personal",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/personal/eliminar/PERS001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"personal",
+						"eliminar",
+						"PERS001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Avion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/avion/eliminar/AV001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"avion",
+						"eliminar",
+						"AV001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar ruta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/rutaVuelos/eliminar/RUTA001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"rutaVuelos",
+						"eliminar",
+						"RUTA001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aeropuertos con más de 3 pistas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/aeropuerto/aeropuertosConMasDe3Pistas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"aeropuerto",
+						"aeropuertosConMasDe3Pistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "empresas que trabajan en un aeropuerto específico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/aeropuerto/empresasEnAeropuerto/MXNOG144",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"aeropuerto",
+						"empresasEnAeropuerto",
+						"MXNOG144"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener la lista de pilotos que tienen licencia para volar una ruta específica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/personal/pilotosConLicencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"personal",
+						"pilotosConLicencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar una empresa que ya no trabaja en un aeropuerto específico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/empresa/eliminarEmpresa/4k9lPqR6yH0nJ7bV3x",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empresa",
+						"eliminarEmpresa",
+						"4k9lPqR6yH0nJ7bV3x"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Encontrar las empresas con más de 10 aviones y que operan en al menos 2 aeropuertos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/empresa/empresasConMasDe10Aviones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empresa",
+						"empresasConMasDe10Aviones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aviones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rutas Vuelos",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener rutas operadas por pilotos con licencia de tipo ATPL",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener aviones con autonomía mayor a 5000 millas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
